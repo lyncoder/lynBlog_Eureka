@@ -1,0 +1,39 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: blogConsumer02
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://blog.Eureka10086.com:10086/eureka,http://blog.Eureka10087.com:10087/eureka
+  instance:
+    instance-id: blogConsumer_8002
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+    lease-expiration-duration-in-seconds: 2
+    lease-renewal-interval-in-seconds: 1
+
+#Feign负载均衡，并开启客户端的熔断机制
+feign:
+  hystrix:
+    enabled: true
+
+ribbon:
+  ReadTimeout: 10000
+  ConnecTimeout: 10000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  eureka:
+    enabled: true
+
+hystrix:
+  command:
+    default:
+      execution:
+        enabled: true
+      isolation:
+        thread:
+          timeoutInMilliseconds: 5000
+

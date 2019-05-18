@@ -1,0 +1,13 @@
+.tabcon{ width:700px; height:500px; background:gray; background:url(../images/indexbg.jpg) no-repeat; padding-top:175px;}
+a{text-decoration:none;}
+a:hover{padding:3px;}
+#board{width:700px;margin-left:auto;margin-right:auto;margin-top:30px;padding:10px;border:1px solid #C96;}
+hr{color:#C96;}
+span{font-size:18px;background:url(../images/textline.png);color:#FC6;padding:5px 20px;}
+p{margin-top:-5px;padding:10px;text-indent:2em;font-size:18px;font-family:"Times New Roman", Times, serif; color:#999;text-shadow:#999;line-height:1.5;}
+
+.title { background:url(../images/titlebg.png) no-repeat 5% 80%; font-size: 20px; line-height: 28px; display: inline-block; padding: 13px 60px 8px 80px; border-bottom: 1px solid #e2e2e2; width: 100%; }
+.title a { color: #454545; }
+.title a:hover { padding: 20px }
+.text { font-size: 14px; padding: 20px 40px; padding-bottom:0px; }
+.text p { line-height: 24px; text-indent:2em;}

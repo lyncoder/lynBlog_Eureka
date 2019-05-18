@@ -1,0 +1,40 @@
+server:
+  port: 7006
+spring:
+  application:
+    name: providerUser
+  main:
+    allow-bean-definition-overriding: true    #重名覆盖
+  datasource:
+    url: jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    dbcp2:
+      min-idle: 5
+      max-idle: 20
+      initial-size: 10
+      max-wait-millis: 20000
+
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+#  configuration:
+#    return-instance-for-empty-row:
+
+# 向Eureka服务端注册信息
+eureka:
+  client:
+    service-url:
+       defaultZone: http://blog.Eureka10086.com:10086/eureka,http://blog.Eureka10087.com:10087/eureka
+  instance: # UP
+    instance-id: providerUser_7006
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+
+#info提示信息
+info:
+  app.name: nxs-blog
+  company.name: www.lynsite.blog
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
